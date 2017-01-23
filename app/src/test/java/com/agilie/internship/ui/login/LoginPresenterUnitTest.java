@@ -1,8 +1,7 @@
 package com.agilie.internship.ui.login;
 
-import com.agilie.internship.network.response.LoginResponse;
+import com.agilie.internship.network.response.SignInResponse;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -11,7 +10,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import rx.Observable;
 
-import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -38,7 +36,7 @@ public class LoginPresenterUnitTest {
         String email = "test@test.test";
         String password = "password";
 
-        LoginResponse response = mock(LoginResponse.class);
+        SignInResponse response = mock(SignInResponse.class);
         when(response.isSuccess()).thenReturn(true);
 
         when(model.login(email, password)).thenReturn(Observable.just(response));
@@ -52,7 +50,7 @@ public class LoginPresenterUnitTest {
         String password = "password";
         String error = "test error";
 
-        LoginResponse response = mock(LoginResponse.class);
+        SignInResponse response = mock(SignInResponse.class);
         when(response.isSuccess()).thenReturn(false);
         when(response.getError()).thenReturn(error);
 

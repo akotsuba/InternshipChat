@@ -1,14 +1,14 @@
 package com.agilie.internship.ui.login;
 
-import com.agilie.internship.network.response.LoginResponse;
+import com.agilie.internship.network.response.SignInResponse;
 
 import rx.Observable;
 
 public interface LoginContract {
 
     interface Model {
-        Observable<LoginResponse> login(String email, String password);
-        void saveUser(LoginResponse response);
+        Observable<SignInResponse> login(String email, String password);
+        void saveUser(SignInResponse response);
     }
 
     interface View {

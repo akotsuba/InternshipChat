@@ -1,6 +1,6 @@
 package com.agilie.internship.network.response;
 
-public class LoginResponse {
+public class SignInResponse {
 
     private boolean success;
     private String error;

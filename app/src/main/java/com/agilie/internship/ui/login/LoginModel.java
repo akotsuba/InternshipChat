@@ -3,7 +3,7 @@ package com.agilie.internship.ui.login;
 import com.agilie.internship.AuthStore;
 import com.agilie.internship.data.User;
 import com.agilie.internship.network.UserWebService;
-import com.agilie.internship.network.response.LoginResponse;
+import com.agilie.internship.network.response.SignInResponse;
 
 import rx.Observable;
 
@@ -22,12 +22,12 @@ public class LoginModel implements LoginContract.Model {
     }
 
     @Override
-    public Observable<LoginResponse> login(String email, String password) {
-        return userWebService.login(email, password);
+    public Observable<SignInResponse> login(String email, String password) {
+        return userWebService.signIn(email, password);
     }
 
     @Override
-    public void saveUser(LoginResponse loginResponse) {
+    public void saveUser(SignInResponse loginResponse) {
         Observable.just(loginResponse).map(response -> {
             User user = new User();
             user.setId(response.getId());
