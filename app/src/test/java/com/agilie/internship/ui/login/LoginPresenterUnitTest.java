@@ -5,6 +5,7 @@ import com.agilie.internship.network.response.LoginResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -29,12 +30,8 @@ public class LoginPresenterUnitTest {
     @Mock
     LoginContract.View view;
 
-    private LoginPresenter presenter;
-
-    @Before
-    public void setUp() throws Exception {
-        presenter = new LoginPresenter(model, view);
-    }
+    @InjectMocks
+    LoginPresenter presenter;
 
     @Test
     public void navigateToMainScreenShouldBeCalledOnSuccessLogin() {

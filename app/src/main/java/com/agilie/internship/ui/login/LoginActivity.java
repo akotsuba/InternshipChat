@@ -3,8 +3,14 @@ package com.agilie.internship.ui.login;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.widget.EditText;
 
 import com.agilie.internship.R;
+import com.jakewharton.rxbinding.view.RxView;
+import com.jakewharton.rxbinding.widget.RxTextView;
+
+import rx.functions.Action1;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.View {
 
@@ -15,7 +21,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        EditText loginEditText = (EditText) findViewById(R.id.loginEditText);
 
+        RxTextView.textChanges(loginEditText).subscribe(charSequence -> { /* Something here */ });
     }
 
     @Override

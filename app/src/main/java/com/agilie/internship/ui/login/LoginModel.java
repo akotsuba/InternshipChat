@@ -28,7 +28,7 @@ public class LoginModel implements LoginContract.Model {
 
     @Override
     public void saveUser(LoginResponse loginResponse) {
-        Observable.just(loginResponse).first().map(response -> {
+        Observable.just(loginResponse).map(response -> {
             User user = new User();
             user.setId(response.getId());
             user.setEmail(response.getEmail());
