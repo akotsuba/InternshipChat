@@ -1,13 +1,20 @@
 <resources>
     <string name="app_name">Internship</string>
 
+    <!--Splash Screen-->
+    <string name="title_activity_splash">SplashActivity</string>
+
+    <!--Login Screen-->
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_sign_in">SIGN IN</string>
+
+    <!--Registration Screen-->
+    <string name="title_activity_registration">RegistrationActivity</string>
+
+    <!--Main Screen-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-
-    <!--LoginActivity-->
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="login_sign_in">SIGN IN</string>
 
 </resources>

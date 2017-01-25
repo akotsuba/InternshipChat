@@ -1,12 +1,15 @@
 package com.agilie.internship.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.EditText;
 
 import com.agilie.internship.R;
+import com.agilie.internship.ui.registration.RegistrationActivity;
 import com.jakewharton.rxbinding.view.RxView;
 import com.jakewharton.rxbinding.widget.RxTextView;
 
