@@ -10,7 +10,7 @@ import com.agilie.internship.ui.registration.RegistrationActivity;
 
 public class SplashActivity extends AppCompatActivity implements SplashContract.View {
 
-    private static final int SPLASH_SHOW_DELAY = 3 * 1000; // 3 sec
+    private static final int SPLASH_SHOW_DELAY = 300 * 1000; // 3 sec
 
     SplashContract.Presenter presenter;
 
@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // new Handler().postDelayed(this::navigateToRegistration, SPLASH_SHOW_DELAY);
+        new Handler().postDelayed(this::navigateToRegistration, SPLASH_SHOW_DELAY);
 
         handler = new Handler();
         runnable = this::navigateToRegistration;
@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity implements SplashContract.
     protected void onResume() {
         super.onResume();
 
-        handler.postDelayed(runnable, SPLASH_SHOW_DELAY);
+        // handler.postDelayed(runnable, SPLASH_SHOW_DELAY);
     }
 
     @Override

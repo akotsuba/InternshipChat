@@ -25,6 +25,8 @@ public class RegistrationModel implements RegistrationContract.Model {
 
     @Override
     public Observable<User> signUp(String email, String login, String password) {
+
+
         return authWebService.sessionCreate(1)
                 // retry emitting observable elements in case of errors 3 times with 1000 ms delay (i. e. network error in our case)
                 .retryWhen(new RetryWithDelay(3, 1000))
@@ -38,4 +40,5 @@ public class RegistrationModel implements RegistrationContract.Model {
                 .doOnNext(user -> database.saveUser(user));
 
     }
+
 }

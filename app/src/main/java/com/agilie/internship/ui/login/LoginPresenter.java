@@ -1,5 +1,7 @@
 package com.agilie.internship.ui.login;
 
+import com.agilie.internship.rx.SchedulerProvider;
+import com.agilie.internship.scheduler.Scheduler;
 import com.agilie.internship.utils.RxUtils;
 
 import rx.subscriptions.CompositeSubscription;
@@ -34,6 +36,7 @@ public class LoginPresenter implements LoginContract.Presenter {
 //                .observeOn(AndroidSchedulers.mainThread())
                 .doOnRequest(onRequest -> view.showProgressBar())
                 .doOnUnsubscribe(() -> view.hideProgressBar())
+                .compose(SchedulerProvider.ANDROID_NETWORK.applySchedulers())
                 .subscribe(loginResponse -> {
                     if (loginResponse.isSuccess()) {
                         model.saveUser(loginResponse);

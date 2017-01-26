@@ -9,7 +9,7 @@ public class LeakedSplashPresenter implements SplashContract.Presenter {
     public LeakedSplashPresenter(SplashContract.View view) {
         this.view = view;
 
-        new Handler().postDelayed(view::navigateToRegistration, 3000);
+        new Handler().postDelayed(view::navigateToRegistration, 30000);
     }
 
     @Override
